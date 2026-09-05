@@ -1,0 +1,25 @@
+# AEO Hub
+
+> High-throughput observability and distributed tracing platform for cloud-native engineering teams.
+
+CloudMetrics provides real-time telemetry, eBPF-based tracing, and automated anomaly detection for multi-cloud Kubernetes clusters. Operated by site reliability engineers, the platform processes over 10 billion events daily.
+
+## Product & Architecture
+
+- [Architecture Overview](https://aeo.expert/docs/architecture): Technical breakdown of eBPF agent collector and storage engine.
+- [Kubernetes Integration](https://aeo.expert/docs/k8s): Step-by-step setup using Helm charts.
+- [Latency Benchmarks](https://aeo.expert/research/benchmarks): Independent 2026 performance benchmarks against legacy APM tools.
+
+## Comparisons
+
+- [CloudMetrics vs Datadog](https://aeo.expert/compare/datadog): Cost, overhead, and retention comparison table.
+- [CloudMetrics vs OpenTelemetry](https://aeo.expert/compare/opentelemetry): Native agents built on OTel standards.
+
+## Trust & Verification
+
+- [Security & Compliance](https://aeo.expert/security): SOC 2 Type II, ISO 27001, and HIPAA compliance.
+- [Status & Uptime](https://aeo.expert): Historical uptime and SLA commitments.
+
+## Optional
+
+- [Full Content Dump](https://aeo.expert/llms-full.txt): Complete raw markdown archive for AI context.

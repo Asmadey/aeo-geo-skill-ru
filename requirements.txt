@@ -1,0 +1,13 @@
+# Answer Engine Optimization (AEO) Skill Dependencies
+#
+# CORE REQUIREMENT:
+# None! The skill uses the Python Standard Library only (3.9+)
+# for all core auditing, optimization, query research, and tracking.
+#
+# OPTIONAL ENHANCEMENTS:
+# Uncomment below if you want enhanced HTTP requests or external API integrations:
+
+# requests>=2.31.0
+# beautifulsoup4>=4.12.0
+# openai>=1.12.0
+# anthropic>=0.25.0

@@ -1,0 +1,283 @@
+# Оптимизация под AI-поисковики: AEO (Answer Engine Optimization) и GEO (Generative Engine Optimization)
+
+> **Автономный агентный навык и инженерный фреймворк для доминирования в генеративном поиске (Редакция 2026)**  
+> *Разработано для ChatGPT Instant (`labrador`), ChatGPT Thinking / Atlas, Perplexity, Google AI Overviews и Gemini.*
+
+[![Standard](https://img.shields.io/badge/Стандарт-Agent%20Skills%201.0-blue.svg)]()
+[![Python](https://img.shields.io/badge/Python-3.9%2B-brightgreen.svg)]()
+[![Архитектура](https://img.shields.io/badge/Архитектура-Только%20Python%20stdlib%20(Без%20зависимостей)-success.svg)]()
+[![База знаний](https://img.shields.io/badge/База%20знаний-247%20исследований%20SearchEngineLand-orange.svg)]()
+[![Плейбук](https://img.shields.io/badge/Плейбук-21%20приоритет%20%7C%20140%2B%20техник-purple.svg)]()
+[![Лицензия](https://img.shields.io/badge/Лицензия-MIT-green.svg)]()
+
+---
+
+## 🎯 Обзор фреймворка
+
+**Answer Engine Optimization (AEO)** и **Generative Engine Optimization (GEO)** знаменуют фундаментальный переход от классической поисковой оптимизации к инженерной подготовке данных для нейросетей. Вместо борьбы за 10 синих ссылок в выдаче, AEO/GEO представляет собой системную дисциплину проектирования контента, технической инфраструктуры, семантической доступности и внешнего консенсуса, благодаря которым **автономные поисковые AI-модели напрямую извлекают, цитируют и атрибутируют ваш бренд в синтезируемых ответах.**
+
+Данный репозиторий представляет собой **исчерпывающую базу знаний и готовый набор исполняемых CLI-инструментов**, синтезированный на основе **247 эмпирических исследований издания [SearchEngineLand](https://searchengineland.com/) за август 2026 года**, охватывающий **21 стратегический приоритет и свыше 140 прикладных инженерных техник**.
+
+### Почему этот подход кардинально отличается от классического SEO
+Традиционное SEO опирается на обход страниц роботами, расчет PageRank и оптимизацию 60-символьных мета-тегов. В отличие от него, современные поисковые AI-системы работают на многоуровневых асинхронных архитектурах:
+- **OpenAI полностью удаляет JSON-LD микроразметку** при конвертации HTML-страниц во внутренний кэш чтения Markdown. Если ключевые факты и цифры не продублированы в основном тексте и в атрибутах `alt` изображений, модель их физически не увидит.
+- **Поисковый индекс `labrador` у OpenAI** сохраняет заголовки длиной до **289 символов** (в то время как Google и Bing обрезают их на 60–75 знаках). Короткие заголовки лишают страницу решающего преимущества при плотном семантическом поиске (dense vector retrieval).
+- **Google использует конвейер поиска Image-First Matching** (официально опубликованный патент, 2026): алгоритм сначала сопоставляет пользовательский запрос с визуальным эмбеддингом изображения, а затем забирает окружающие текстовые блоки для формирования Google AI Overview.
+- **Автономные браузерные AI-агенты (ChatGPT Atlas, WebMCP, Playwright)** не анализируют пиксели или сырой DOM; они взаимодействуют с сайтом исключительно через **Accessibility Tree (дерево доступности)**: ARIA-роли, ориентиры и доступные имена элементов.
+- **Более 40% цитирований страдают от эффекта "Ghost Citations"**: нейросеть забирает ваши данные и цифры, но полностью опускает название бренда, если оно не связано синтаксически.
+- **22.4% реферального AI-трафика скрыто в Dark Funnel в GA4** (ошибочно определяется как `Direct / None`), и выявляется только через URL Scroll-to-Text Fragments (`#:~:text=`).
+
+Этот фреймворк выводит оптимизацию под искусственный интеллект на **уровень строгой программной инженерии**.
+
+---
+
+## 🏗️ 5-фазный жизненный цикл запуска и обновления
+
+Фреймворк реализует пятифазный производственный процесс, позволяющий вывести любой ресурс на позицию категорийного лидера по цитируемости:
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ФАЗА 0: Выбор ниши и исследование поисковой воронки (Дни 1–7)              │
+│  - Поиск свободных ниш (53.7% поискового AI-спроса не имеют владельца темы) │
+│  - Картирование запросов по воронке: ToFU (Проблема), MoFU, BoFU (Выбор)    │
+│  - Анализ пробелов в бенчмарках конкурентов и генерация целевых промптов    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ФАЗА 1: Технический фундамент, кэш и доступность ARIA (Недели 1–2)         │
+│  - Оптимизация сырого HTML (строгий лимит веса полезной нагрузки < 4 МБ)    │
+│  - Структурирование Accessibility Tree (<main>, <article>, ARIA-landmarks)  │
+│  - Доступ для AI-краулеров (GPTBot, ClaudeBot, PerplexityBot) в robots.txt  │
+│  - Публикация семантической карты домена через llms.txt и llms-full.txt     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ФАЗА 2: Архитектура пассажей и мультимодальные изображения (Недели 2–4)    │
+│  - Конструирование H1-предложения под индекс labrador (до 250 символов)     │
+│  - Лид-абзац под 200-символьный бюджет ChatGPT Instant сразу после H1       │
+│  - Модуляризация на 117-словные атомарные пассажи (вопросительные H2)       │
+│  - Мультимодальная денотация изображений и информативный alt-текст          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ФАЗА 3: Производство, фильтр трех агентов и привязка бренда (Недели 3–10)  │
+│  - Синтаксическая привязка бренда к фактам для защиты от Ghost Citations    │
+│  - Создание собственных именных активов (Индексы, Отчеты, Бенчмарки)        │
+│  - Фильтр верификации 3 агентов: Редактор, Факт-чекер, Детектор AI-клише    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ФАЗА 4: 85% внешний след и атрибуция Dark Funnel (Недели 4–12+)            │
+│  - Создание авторитета на Reddit (майнинг 35M+ ключей с AI Overviews)       │
+│  - Посев транскриптов длинных YouTube-видео и регистрация на агрегаторах   │
+│  - Отслеживание фрагментов текста в GA4 (#:~:text=) для возврата 22.4%      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ФАЗА 5: Матрица рефреша по 56-дневному GSC baseline и мониторинг           │
+│  - 56-дневный baseline в GSC и 3-шаговый тест независимости страниц         │
+│  - Протокол Keep / Fix / Remove (301) / Add (без обнуления истории URL)     │
+│  - Непрерывный учет по 4-статусной матрице (both / ghost / mention / neither│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🔬 Инженерные техники: Приоритеты #12 – #21
+
+Ниже представлена детальная инженерная сводка ключевых технических приоритетов из плейбука SearchEngineLand (август 2026 года), раскрывающая внутреннюю механику поисковых систем и AI-агентов:
+
+| № | Приоритет | Кол-во техник | Ключевой технический механизм и научное открытие | Прикладная реализация и инструментарий |
+|:---|:---|:---:|:---|:---|
+| **#12** | **Внутреннее устройство поиска в ChatGPT** | **8 техник** | **3-уровневая архитектура:** (1) Индекс обнаружения (`labrador`), (2) Кэш чтения (Markdown), (3) Реальные переходы (`ChatGPT-User`). Всего 1.5% URL из `labrador` совпадают с топ-20 Bing. Instant-режим (~90% пользователей) синтезирует ответ исключительно по H1 и первым 200 символам, не открывая сайт. Thinking-режим открывает живые страницы (74% вероятности цитирования для открытых URL против 7% для неоткрытых). **Кэш Markdown:** вырезает скрипты, фреймы и JSON-LD, сохраняет alt-текст, живет до 30 дней. `labrador` индексирует заголовки до 289 символов. | • Генерация полных заголовков-предложений (до 250 знаков) через `aeo_optimizer.py`.<br>• Очистка первых 200 знаков под H1 от навигации и хлебных крошек.<br>• Дублирование фактов из JSON-LD в открытом тексте и в `alt` картинок.<br>• Форсирование обновления кэша через заголовки `Last-Modified` и пинг IndexNow.<br>• Руководство: `references/openai_markdown_cache_and_rendering.md`. |
+| **#13** | **Accessibility Tree для AI-агентов** | **4 техники** | **Навигация агентов по ARIA:** Автономные агенты (ChatGPT Atlas, WebMCP, Microsoft Playwright MCP) не считывают графические пиксели или сырой DOM. Они взаимодействуют со страницей через **Accessibility Tree (дерево доступности)** — семантический слой браузера. Если у кнопки или факта отсутствует доступное имя (`accessible name`) или ARIA-роль, агент не сможет их обнаружить или нажать. | • Иерархия семантических ориентиров `<main>`, `<article>`, `<nav>`, `<aside>`.<br>• Доступные имена для интерактивных элементов (`aria-label`, текст кнопок) без абстракций вроде *"подробнее"*.<br>• Снимки accessibility tree в CI/CD (AXray / Playwright) для предотвращения регрессий.<br>• Руководство: `references/accessibility_tree_for_ai_agents.md`. |
+| **#14** | **Мультимодальное GEO изображений** | **3 техники** | **Изображение как входной шлюз:** 20 млрд поисков Google Lens в месяц. В апреле 2026 года Google опубликовал патент на **Image-First Matching**: поисковик сначала находит соответствие запроса с визуальным эмбеддингом картинки, а затем забирает текст вокруг нее для формирования AI Overview. Стоковые фото игнорируются; денотативные изображения (схемы, графики, UI) побеждают. | • Визуальный аудит сопутствия (Денотация против Коннотации).<br>• Включение проверяемых фактов с инфографики в видимый текст и в атрибуты `alt`.<br>• Специфика изображений по типам страниц (упаковка товара с OCR-текстом, схемы архитектуры в статьях).<br>• Руководство: `references/multimodal_image_geo.md`. |
+| **#15** | **Локальное SEO для AI-поиска** | **8 техник** | **Local 5.0 Context Intelligence:** AI берет на себя проверку фактов вместо пользователя. В локальном поиске ~60% цитат Gemini приходятся на прямые сайты бизнесов, а Reddit занимает #2 (13.7%), опережая агрегаторы каталогов. **Grounding Drift:** повтор одного и того же запроса дает одинаковые источники лишь в ~40% случаев (против 90% в Local Pack). Анализ 1.8 млн карточек Google Business Profile показал, что точные подкатегории дают +17 позиций, а смена адреса влечет скрытые алгоритмические санкции («призрак» старого адреса). | • Построение графов контекстной памяти (Context Memory Graphs: локация + отзывы + намерения).<br>• Оцифровка локального ассортимента через GBP Products для совершения покупок AI-агентами.<br>• Проверка координат через Google Geocoding API перед сменой адреса в GBP.<br>• Внедрение структуры страниц Query Deserves a Page (QDP).<br>• Руководство: `references/aeo_eeat_canon.md`. |
+| **#16** | **Reddit-стратегии для AI-видимости** | **3 техники** | **Движок стороннего консенсуса:** Reddit ранжируется по ~166 млн поисковых запросов, из которых 35+ млн вызывают Google AI Overviews (где Reddit цитируется в 46% случаев). Однако доля цитат Reddit в ChatGPT Search упала на 86% всего за 4 дня во время изменения ширины поискового веера (fan-out), что доказывает крайнюю волатильность платформы. | • Сбор высокочастотных тем с AI Overviews через Semrush Keyword Gap по домену `reddit.com`.<br>• 5-шаговый фреймворк авторитета на Reddit (кейс Kumon: рост видимости в ChatGPT с 5% до 18.13%).<br>• Раздельный мониторинг по каждой AI-платформе для снижения риска волатильности.<br>• Руководство: `references/third_party_ugc_footprint.md`. |
+| **#17** | **MCP-серверы и AI-инструментарий** | **3 техники** | **Model Context Protocol (MCP):** Подключение AI-ассистентов напрямую к маркетинговым источникам (Semrush MCP, Ahrefs, GSC). Объединение инструментов в цепочки позволяет агентам обходить лимиты экспорта (например, ограничение GA4 на 5 000 строк) и моментально сопоставлять просадки трафика с SERP. Неконтролируемая кластеризация (TF-IDF + HDBSCAN) группирует 12 000+ ключей в семантические кластеры без искусственного ограничения числа групп. | • Подключение консольных агентов к поисковым API через протокол MCP.<br>• Цепочки анализа: падение трафика в GA4 + падение позиций → генерация ТЗ на рефреш страницы.<br>• Плотная кластеризация ключевых слов на Python алгоритмом HDBSCAN.<br>• Руководство: `references/api_configuration.md`. |
+| **#18** | **AI-конвейеры генерации контента** | **2 техники** | **7 циклов самообучения конвейера:** (1) Стратегический фильтр брифа, (2) Проверка источников, (3) Лимит ревизий (максимум 2 итерации с эскалацией человеку), (4) Рубрикаторная оценка судьей, (5) Оппонентский агент (поиск слабых мест), (6) Анализ диффов опубликованного текста и сырого markdown, (7) Еженедельный feedback loop из GSC. Архитектура строится на изолированных контекстных окнах агентов и дает 95% готовности к публикации. | • Внедрение шлюза из трех независимых агентов: Редактор, Факт-чекер и Детектор AI-штампов.<br>• Фиксация констант бренда (голос бренда, портрет ЦА, факты) при модульности темы.<br>• Руководство: `references/content_verification_pipeline.md`. |
+| **#19** | **Поведенческие данные в AI-поиске** | **6 техник** | **Преимущество известности бренда:** AI-модели обращаются к знакомым брендам в **3.2 раза чаще** (55.7% против 17.4%). 63% брендовых поисков приходятся на топ-5 известных имен. 88% взрослых пользователей считают рекомендации товаров в AI Mode лучшими на рынке. **53.7% категорий не имеют признанного владельца темы**, что открывает огромные возможности. Завоеванный авторитет в теме демонстрирует сверхвысокую стабильность во времени. | • Борьба за вхождение в топ-5 параметров по умолчанию для категории.<br>• Приоритет категорий без явного лидера, где бюджет цитирования свободен.<br>• Оптимизация посадочных страниц продуктов (наиболее цитируемый тип контента в AI, >50% цитат).<br>• Руководство: `references/llm_citation_patterns.md`. |
+| **#20** | **Видимость в AI как проблема организации** | **3 техники** | **Дилемма координации:** Поскольку от 82% до 85% цитат указывают на сторонние медиа (Reddit, YouTube, обзоры, отраслевые блоги), видимость в AI нельзя решить только силами изолированного SEO-отдела. Требуется совместная работа команд SEO, PR, маркетинга, SMM и партнерских программ. Изолированная работа ведет к тому, что компания многократно переплачивает за одни и те же связи. | • Формирование единого межфункционального центра управления AI-видимостью.<br>• Измерение инкрементальности публикаций блогеров и обзорщиков (оценка реального вклада, а не только комиссии).<br>• Синхронизация KPI отделов PR и SEO вокруг семантического следа сущности.<br>• Руководство: `references/third_party_ugc_footprint.md`. |
+| **#21** | **Динамика Google AI Overviews и AI Mode** | **4 техники** | **Динамическое разворачивание выдачи:** Google динамически раскрывает AI Overview на весь экран для сложных запросов, полностью вытесняя классические синие ссылки. Трендовые события запускают интерактивные карусели ссылок (Link Carousels). В выборке из 51 200 событий трафик из AI Overviews составил 7.53% органики с выраженным законом Парето (топ-сниппет дал 2 276 переходов при среднем значении 31). Внедрение Gemini 3.7 Flash снижает задержку генерации. | • Мониторинг новостной повестки для захвата каруселей ссылок в AI Mode.<br>• Концентрация усилий на верхних страницах-хабах, генерирующих основной объем цитат.<br>• Мониторинг жизненного цикла сниппета (фаза пика и угасания) для своевременного рефреша.<br>• Руководство: `references/page_refresh_and_cannibalization.md`. |
+
+---
+
+## 🛠️ Набор консольных скриптов (`scripts/`)
+
+Репозиторий включает готовые модульные CLI-утилиты, написанные исключительно на **стандартной библиотеке Python 3.9+ (`stdlib-only`)**. Никаких внешних библиотек устанавливать не требуется.
+
+```text
+scripts/
+├── aeo_audit.py          # Комплексный аудит E-E-A-T, заголовков labrador и картинок
+├── aeo_optimizer.py      # Оптимизатор контента: заголовки labrador и привязка бренда
+├── citation_tracker.py   # 4-статусная матрица видимости и расчет Ghost Citation Ratio
+├── llms_txt_generator.py # Генератор и валидатор файлов стандарта llms.txt
+├── query_researcher.py   # Исследование запросов по воронке и руководство Dark Funnel
+├── report_generator.py   # Исполнительные отчеты, сравнение до/после и матрица рефреша
+├── success_patterns.py   # Адаптивная библиотека семантических паттернов извлечения
+├── api_manager.py        # Модуль подключения внешних API (OpenAI, Perplexity, Ahrefs)
+└── utils.py              # Вспомогательные утилиты парсинга, читаемости и валидации
+```
+
+### 1. Комплексный аудитор (`aeo_audit.py`)
+Оценивает контент по 5 шкалам E-E-A-T, лимиту первых 200 знаков для ChatGPT Instant, качеству H1 под индекс `labrador`, сохранению фактов в картинках для кэша Markdown и независимости пассажей:
+```bash
+# Аудит локального файла статьи
+python3 scripts/aeo_audit.py --input post.md --industry saas
+
+# Аудит веб-страницы с выводом результата в JSON
+python3 scripts/aeo_audit.py --url https://example.com/guide --output json
+
+# Запуск встроенного теста
+python3 scripts/aeo_audit.py --sample
+```
+
+### 2. Семантический оптимизатор (`aeo_optimizer.py`)
+Трансформирует сырой текст в формат готовых пассажей: генерирует информативный H1 для индекса OpenAI `labrador` (до 250 символов), обогащает alt-тексты картинок фактами для кэша Markdown, внедряет микроразметку Schema.org JSON-LD и синтаксически привязывает бренд к цифрам:
+```bash
+# Оптимизация статьи в сбалансированном режиме с привязкой бренда
+python3 scripts/aeo_optimizer.py --input article.md --brand "CloudMetrics" --mode balanced --output article-aeo.md
+
+# Консервативный режим (затрагивает <10% текста, добавляет схему и футер прозрачности)
+python3 scripts/aeo_optimizer.py --input article.md --mode conservative --output article-safe.md
+
+# Запуск встроенного примера
+python3 scripts/aeo_optimizer.py --sample --brand "AcmeCorp"
+```
+
+### 3. Трекер видимости и Ghost Citations (`citation_tracker.py`)
+Ведет учет фиксации бренда по 4 состояниям (`both`, `ghost`, `mention`, `neither`) и вычисляет критический коэффициент **Ghost Citation Ratio**:
+```bash
+# Запись проверки запроса в журнал
+python3 scripts/citation_tracker.py add --url https://example.com/post \
+  --llm perplexity --query "лучшие системы мониторинга" --status both --brand "CloudMetrics"
+
+# Формирование отчета по конкретному адресу
+python3 scripts/citation_tracker.py report --url https://example.com/post
+
+# Общая сводка по всему домену
+python3 scripts/citation_tracker.py summary
+```
+
+### 4. Генератор и валидатор `llms.txt` (`llms_txt_generator.py`)
+Формирует и валидирует файл документации для нейросетей согласно официальному стандарту:
+```bash
+# Генерация llms.txt по шаблону (saas, publisher, docs, ecommerce)
+python3 scripts/llms_txt_generator.py generate --template saas --name "CloudMetrics" --url "https://cloudmetrics.io"
+
+# Валидация синтаксиса существующего файла
+python3 scripts/llms_txt_generator.py validate --file llms.txt
+
+# Объединение файлов документации в полный контекстный бандл (llms-full.txt)
+python3 scripts/llms_txt_generator.py dump --input-dir ./docs --output llms-full.txt
+```
+
+### 5. Исследователь запросов по воронке (`query_researcher.py`)
+Группирует поисковые запросы по этапам воронки (ToFU Проблема, MoFU Сравнение, BoFU Выбор поставщика) и дает настройки атрибуции для аналитики:
+```bash
+# Исследование запросов по теме
+python3 scripts/query_researcher.py --topic "Enterprise Observability" --region US
+
+# Исследование с анализом сайтов конкурентов
+python3 scripts/query_researcher.py --topic "Kubernetes Monitoring" --competitors "https://datadog.com,https://dynatrace.com"
+```
+
+### 6. Генератор отчетов и матрицы рефреша (`report_generator.py`)
+Создает отчеты для руководства, таблицы сравнения баллов до/после и матрицу обновления страниц Keep / Fix / Remove / Add:
+```bash
+# Формирование отчета на основе JSON аудита
+python3 scripts/report_generator.py --project "Миграция SaaS" --audit-json audit.json --output executive_report.md
+
+# Построение матрицы обновления страниц Keep / Fix / Remove / Add
+python3 scripts/report_generator.py --project "Корпоративный портал" --refresh-matrix
+```
+
+---
+
+## 📚 Специализированная база знаний (`references/`)
+
+В репозитории содержится 17 глубоких руководств, подробно раскрывающих каждую тему:
+
+| Файл руководства | Тематический фокус и содержание |
+|:---|:---|
+| [openai_markdown_cache_and_rendering.md](references/openai_markdown_cache_and_rendering.md) | Механика кэша чтения Markdown у OpenAI, стрипинг JSON-LD, выживаемость alt-текста, заголовки до 289 знаков в labrador. |
+| [multimodal_image_geo.md](references/multimodal_image_geo.md) | Патент Google на Image-First matching, 20 млрд поисков Google Lens в месяц, аудит денотации и коннотации. |
+| [accessibility_tree_for_ai_agents.md](references/accessibility_tree_for_ai_agents.md) | Оптимизация Accessibility Tree для браузерных AI-агентов (Atlas, WebMCP, Playwright), семантические ориентиры. |
+| [page_refresh_and_cannibalization.md](references/page_refresh_and_cannibalization.md) | 56-дневный baseline в GSC, фреймворк Keep/Fix/Remove/Add, 3-шаговый тест независимости страниц, защита URL-истории. |
+| [chatgpt_instant_vs_thinking.md](references/chatgpt_instant_vs_thinking.md) | Индекс `labrador` против живых переходов `ChatGPT-User`, 200-символьный бюджет под H1, языковой фактор `/en/`. |
+| [third_party_ugc_footprint.md](references/third_party_ugc_footprint.md) | Построение 85% следа стороннего авторитета на Reddit, в YouTube и на агрегаторах отзывов. |
+| [anti_ghost_citation_guide.md](references/anti_ghost_citation_guide.md) | Формулы синтаксической привязки бренда к цифрам, создание именных бенчмарков и индексов. |
+| [content_verification_pipeline.md](references/content_verification_pipeline.md) | Конвейер проверки контента 3 агентами (Редактор, Факт-чекер, Детектор AI-клише) для устранения AI-мусора. |
+| [llms_txt_guide.md](references/llms_txt_guide.md) | Полная спецификация стандарта, архитектура файлов и шаблоны для `llms.txt` и `llms-full.txt`. |
+| [geo_entity_optimization.md](references/geo_entity_optimization.md) | 5-уровневый стек видимости GEO и 12 шаблонов семантических блоков для извлечения. |
+| [bot_access_and_monitoring.md](references/bot_access_and_monitoring.md) | Реестр краулеров (`GPTBot`, `ClaudeBot`, `PerplexityBot`), настройка robots.txt и мониторинг логов. |
+| [extractable_content_patterns.md](references/extractable_content_patterns.md) | 7 готовых шаблонов сниппетов контента, оптимизированных для извлечения генеративными моделями. |
+| [llm_citation_patterns.md](references/llm_citation_patterns.md) | Специфика ранжирования и извлечения цитат в Perplexity, ChatGPT, Claude и Google Gemini. |
+| [aeo_eeat_canon.md](references/aeo_eeat_canon.md) | Алгоритмические метрики оценки авторитетности E-E-A-T, отраслевые нормативы. |
+| [aeo_vs_seo.md](references/aeo_vs_seo.md) | Стратегическое руководство по распределению ресурсов между традиционным SEO и AEO/GEO. |
+| [success_patterns_guide.md](references/success_patterns_guide.md) | Инструкция по использованию локальной адаптивной библиотеки успешных паттернов. |
+| [api_configuration.md](references/api_configuration.md) | Руководство по подключению внешних API (OpenAI, Anthropic, Gemini, Perplexity, Ahrefs, SEMrush). |
+
+---
+
+## 📋 Чек-лист перед публикацией материала
+
+Перед публикацией или обновлением страницы убедитесь в соблюдении критериев:
+
+- [ ] **Вес страницы:** Размер сырого HTML `< 4 МБ` (без ссылок, внедряемых клиентским JavaScript).
+- [ ] **Заголовок под Labrador:** H1 представляет собой законченное информативное предложение (до 250–289 знаков) с ключевыми сущностями.
+- [ ] **Лид ChatGPT Instant:** Первые 200 символов сразу под H1 дают прямой, фактографический ответ (без хлебных крошек и оглавления).
+- [ ] **Выживаемость в кэше Markdown:** Все главные факты, цифры и регалии автора присутствуют в основном видимом тексте (не полагайтесь исключительно на JSON-LD).
+- [ ] **Денотация картинок:** Изображения содержат содержательные схемы, графики или инструкции с подробным фактографическим `alt`-текстом.
+- [ ] **Ориентиры Accessibility Tree:** Корректно расставлены теги `<main>`, `<article>`, `<nav>`, `<aside aria-label="дисклеймер">` без безымянных кнопок.
+- [ ] **Самодостаточность пассажа:** Каждая H2-секция отвечает на вопрос автономно (без связок вроде *"как сказано выше"*).
+- [ ] **Защита от потери бренда:** Числовые данные и факты грамматически связаны с именем бренда или фирменного исследования.
+- [ ] **Таблицы сравнения:** Сравнительные матрицы оформлены стандартными таблицами Markdown или HTML.
+- [ ] **Атрибуция Dark Funnel:** В GA4 настроен параметр для фиксации текстовых фрагментов (`location.hash` с `#:~:text=`).
+- [ ] **Сохранение URL:** Успешные страницы (Keep) сохраняют исходный URL slug и H1, чтобы не обнулять историю цитирования в LLM.
+- [ ] **Наличие llms.txt:** В корне домена опубликован валидный файл `llms.txt`, ссылающийся на данный материал.
+
+---
+
+## ⚡ Быстрый старт (за 5 минут)
+
+```bash
+# 1. Аудит готовности контента
+python3 scripts/aeo_audit.py --input my_article.md --industry saas
+
+# 2. Оптимизация пассажей и привязка бренда к цифрам
+python3 scripts/aeo_optimizer.py --input my_article.md --brand "MyBrand" --mode balanced --output my_article_aeo.md
+
+# 3. Генерация семантического файла llms.txt для домена
+python3 scripts/llms_txt_generator.py generate --template saas --name "MyBrand" --url "https://mybrand.com"
+
+# 4. Логирование проверки запроса в 4-статусном журнале
+python3 scripts/citation_tracker.py add --url https://mybrand.com/my_article \
+  --llm perplexity --query "что такое моя тема" --status both --brand "MyBrand"
+
+# 5. Построение матрицы обновления страниц Keep / Fix / Remove / Add
+python3 scripts/report_generator.py --project "МойПортал" --refresh-matrix
+```
+
+---
+
+## 🏛️ Первоисточники и библиография исследований
+
+Этот фреймворк опирается на корпус эмпирических исследований поисковых алгоритмов, опубликованных ведущим отраслевым изданием **[SearchEngineLand](https://searchengineland.com/)** (247 аналитических статей за август 2026 года, Playbook V2), а также наработки open-source сообщества.
+
+### Ключевые исследования SearchEngineLand:
+1. **Стек поиска в ChatGPT:** [Inside ChatGPT's retrieval stack: Discovery index, reading cache, and live opens](https://searchengineland.com/chatgpt-retrieval-stack-index-cache-pages-485036) — *Эмпирический разбор индекса `labrador`, кэширования Markdown, стрипинга JSON-LD и экономики маршрутизации.*
+2. **Анализ цитирования в AI Mode:** [What 15.7 million AI Mode citations reveal about AI search](https://searchengineland.com/what-15-7-million-ai-mode-citations-reveal-483393) — *Распределение объемов цитирования, медианная длина пассажей (117 слов) и концентрация источников.*
+3. **Эволюция Local 5.0:** [Local 5.0: The next evolution of local SEO in AI search](https://searchengineland.com/local-5-ai-search-seo-485160) — *Переход к Context Intelligence, графы контекстной памяти и AI-посредники.*
+4. **Мультимодальный визуальный поиск:** [Your images have a new job in AI search](https://searchengineland.com/images-new-job-ai-search-485840) — *Патент Google на Image-First matching, 20 млрд запросов в Google Lens и аудит денотации.*
+5. **Аудит Accessibility Tree:** [10 SEO use cases for auditing your Accessibility Tree](https://searchengineland.com/accessibility-tree-seo-use-cases-484338) — *Механика взаимодействия AI-агентов с ARIA-деревом и регрессионные снимки в CI.*
+6. **Индекс видимости в AI:** [The AI Visibility Index: Why top brands vanish from AI answers](https://searchengineland.com/ai-visibility-index-brands-vanishing-from-ai-search-485057) — *Исследование Fractl: 5% авторитетных брендов с высоким DR полностью отсутствуют в AI-ответах.*
+7. **Анализ 1.8 млн профилей GBP:** [What 1.8M Google Business Profiles tell us](https://searchengineland.com/google-business-profiles-local-seo-success-data-485727) — *Влияние специфичности категорий, полноты карточки и скрытые санкции за смену адреса.*
+8. **Фреймворк авторитета на Reddit:** [5 steps to building Reddit authority](https://searchengineland.com/building-reddit-authority-visibility-486084) и [Reddit is the keyword research tool you're probably not using](https://searchengineland.com/reddit-keyword-research-tool-485859) — *Сбор 35+ млн ключевых слов, активирующих AI Overviews.*
+9. **Волатильность цитат на платформах:** [Reddit's ChatGPT Search citations fell 86%](https://searchengineland.com/reddit-chatgpt-search-citations-fall-report-485473) — *Изменение ширины поискового веера (fan-out) и распределение рисков.*
+10. **Фактор узнаваемости бренда для моделей:** [AI models favor familiar brands in search](https://searchengineland.com/ai-models-favor-familiar-brands-search-study-484054) — *3 960 тестов, показавших предпочтение знакомым сущностям в 3.2 раза.*
+11. **Протокол MCP в поисковом анализе:** [How to use MCP Servers to speed up SEO research](https://searchengineland.com/guide/use-mcp-servers-speed-up-seo-research) и [MCP data tools](https://searchengineland.com/mcp-data-tools-484650) — *Интеграция Model Context Protocol с Semrush, Ahrefs и GSC.*
+12. **Самообучающиеся конвейеры контента:** [7 feedback loops for self-improving AI content workflows](https://searchengineland.com/self-improving-ai-content-workflows-483404) и [How to build an AI content workflow from the ground up](https://searchengineland.com/build-ai-content-workflow-from-ground-up-485565).
+13. **Анализ локальных цитат:** [Business websites dominate Gemini local AI search citations](https://searchengineland.com/business-websites-gemini-citations-local-ai-search-study-485506) — *60% цитат приходятся на сайты компаний, метрика Grounding Drift.*
+14. **Динамика Google AI Overviews:** [Google is dynamically expanding AI Overviews](https://searchengineland.com/google-is-dynamically-expanding-ai-overviews-for-some-queries-486200) и [Google adds link carousels for developing topics](https://searchengineland.com/google-adds-link-carousels-for-developing-topics-in-ai-mode-485884).
+
+### Наследие открытых репозиториев:
+- **`alirezarezvani/claude-skills` и `alirezarezvani/aeo-box`:** Базовые эвристики Answer Engine Optimization и структура пассажей.
+- **`rampstackco/claude-skills` (seo-aeo-geo):** Внедрение стандарта `llms.txt`, курируемые ссылки документации и мульти-движковая логика.
+- **Официальные стандарты:** [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) от Anthropic, микроразметка [Schema.org](https://schema.org/) от W3C и спецификация [llms.txt](https://llmstxt.org/) от Answer.ai.
+
+---
+
+## 📄 Лицензия
+
+Распространяется под свободной лицензией **MIT License**. Создано для автономных AI-агентов, технических SEO-специалистов, промпт-инженеров и маркетологов, развивающих цифровые активы в эпоху генеративного поиска.
